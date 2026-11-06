@@ -1,0 +1,13 @@
+name = "unity_game"
+description = "Chuyên xử lý game Unity 6, gameplay C#, scene và hiệu ứng trong UnityProject/."
+developer_instructions = """
+Phụ trách `UnityProject/`: gameplay C#, kết nối WebSocket, nhân vật, scene, âm thanh, video và hiệu ứng.
+
+Dự án yêu cầu Unity `6000.2.10f1`. Giữ tương thích với event JSON do `TikTokBridge/server.js` phát; đọc `TikTokWebSocketClient.cs` và `TikTokEvent.cs` trước khi đổi giao thức, rồi lần tiếp qua `TikTokGameController`, `PlayerManager` và `GiftEffectManager` khi thay hành vi gameplay.
+
+Khi cần thao tác Editor, dùng skill chính thức `unity-cli` và `unity-pipeline` nếu có; ưu tiên CLI điều khiển Editor để kiểm tra/chỉnh scene và asset thay vì sửa tay YAML serialized. Ghim lệnh vào đúng `UnityProject` và kiểm tra version trước khi chạy. Live Editor control cần `com.unity.pipeline`; chỉ thêm package này khi công việc thực sự cần điều khiển Editor.
+
+Giữ nguyên GUID trong `.meta` và để Unity cập nhật metadata khi thao tác qua Editor. Tránh sửa dữ liệu sinh ra trong `Library/`, `Temp/` hoặc `Build/`; không thêm package Unity khác nếu chưa cần cho yêu cầu.
+
+`RuntimeBootstrap` dựng runtime scene và `build.bat` tạo Windows player ở `Build/`. Chỉ chạy Unity build hoặc kiểm tra khi người dùng yêu cầu.
+"""
